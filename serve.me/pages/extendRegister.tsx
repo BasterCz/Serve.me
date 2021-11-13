@@ -5,6 +5,7 @@ import { EmailAuthCredential } from "@firebase/auth";
 import PhoneInput from 'react-phone-number-input/input'
 import { E164Number } from "libphonenumber-js/min";
 import Head from 'next/head'
+import Navbar from "./Components/Navbar";
 const ExtendRegister = () => {
 
     const [firstName, setFirstName] = useState("");
@@ -40,6 +41,7 @@ const ExtendRegister = () => {
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossOrigin="anonymous" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Navbar/>
             <section className="vh-100">
                 <div className="container-fluid h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
@@ -48,51 +50,47 @@ const ExtendRegister = () => {
                         <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                             <form>
                                 <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                                    <p className="lead fw-normal mb-0 me-3">Register</p>
+                                    <p className="lead fw-normal mb-0 me-3 title">Register</p>
                                 </div>
                                 <div className="divider d-flex align-items-center my-4">
                                     <p className="text-center fw-bold mx-3 mb-0" />
                                 </div>
-                                <div className="form-outline mb-4">
-                                    <input type="text" id="form3Example3" className="form-control form-control-lg" placeholder="First Name..." onChange={(event) => {
+                                <div className="form-outline mb-4 input">
+                                    <input type="text" id="form3Example3" className=" input-field"  onChange={(event) => {
                                         setFirstName(event.target.value)
                                     }}
                                         required />
-                                    <label className="form-label" htmlFor="form3Example3">First name</label>
+                                    <label className="form-label input-label" htmlFor="form3Example3">First name</label>
                                 </div>
-                                <div className="form-outline mb-3">
-                                    <input type="texts" id="form3Example4" className="form-control form-control-lg" placeholder="Last name..." onChange={(event) => {
+                                <div className="form-outline mb-3 input">
+                                    <input type="text" id="form3Example4" className=" input-field"  onChange={(event) => {
                                         setLastName(event.target.value)
                                     }}
                                         required />
-                                    <label className="form-label" htmlFor="form3Example4">Second name</label>
+                                    <label className="form-label input-label" htmlFor="form3Example4">Second name</label>
                                 </div>
-                                <div className="form-outline mb-4">
-                                    <input type="text" id="form3Example3" className="form-control form-control-lg" placeholder="Nickname..."
+                                <div className="form-outline mb-4 input">
+                                    <input type="text" id="form3Example3" className=" input-field" 
                                         onChange={(event) => {
                                             setNickname(event.target.value)
                                         }}
                                         required/>
-                                    <label className="form-label" htmlFor="form3Example3">Nickname</label>
+                                    <label className="form-label input-label" htmlFor="form3Example3">Nickname</label>
                                 </div>
-                                <div className="form-outline mb-3">
-                                    <PhoneInput id="form3Example4" className="form-control form-control-lg" placeholder="Phone..."
+                                <div className="form-outline mb-3 input">
+                                    <PhoneInput id="form3Example4" className=" input-field" 
                                         onChange={setPhone}
                                         required />
-                                    <label className="form-label" htmlFor="form3Example4">Phone number</label>
+                                    <label className="form-label input-label" htmlFor="form3Example4">Phone number</label>
                                 </div>
-                                <div className="text-center text-lg-start mt-4 pt-2">
-                                    <button type="button" className="btn btn-primary btn-lg" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }} onClick={AddData}>Register</button>
+                                <div className="text-center text-lg-start mt-4 pt-2 d-grid gap-2">
+                                    <button type="button" className="btn btn-primary btn-lg boton" style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }} onClick={AddData}>Register</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-                    <div className="text-white mb-3 mb-md-0">
-                        Copyright © 2020. All rights reserved.
-                    </div>
-                </div>
+                
             </section>
         </div>
 
