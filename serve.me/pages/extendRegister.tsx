@@ -5,7 +5,7 @@ import { EmailAuthCredential } from "@firebase/auth";
 import PhoneInput from 'react-phone-number-input/input'
 import { E164Number } from "libphonenumber-js/min";
 import Head from 'next/head'
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/navbar";
 const ExtendRegister = () => {
 
     const [firstName, setFirstName] = useState("");
