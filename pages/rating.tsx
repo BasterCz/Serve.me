@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import {FaStar} from "react-icons/fa"
+import Firetest from "./testFirebase";
 const Rating = () => {
   const[hoverValue, setHoverValue] = useState(0);
   const[currentValue, setCurrentValue] = useState(0);
-  const[finalValue, setFinalValue] = useState<undefined | number>(undefined)
+  const[finalValue, setFinalValue] = useState<number>(0)
   const[review, setReview] = useState<undefined | string>(undefined)
+  const[canSend, setCanSend] = useState(false);
 
 
   const handleClick = (value : number) => {
@@ -18,6 +20,7 @@ const Rating = () => {
     event.preventDefault()
     setReview(event.target.reviewText.value)
     setFinalValue(currentValue)
+    setCanSend(true)
   }
 
   return(
@@ -51,8 +54,7 @@ const Rating = () => {
         <button type="submit">Odeslat</button>
       </div>
     </form>
-    <div>{finalValue}</div>
-    <div>{review}</div>
+    {canSend && <Firetest stars={finalValue} review={review}/>}
     </>
   )
 }
