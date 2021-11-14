@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'  
 import{auth} from "../utils/firebase"
 import Navbar from "./Components/navbar"
+import styled from "styled-components"
 
 
 const Login=()=>{
@@ -46,11 +47,10 @@ const Login=()=>{
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossOrigin="anonymous" />
                 <link rel="icon" href="/favicon.ico" /> 
-                <link rel="stylesheet" href="styles/base.css" />
             </Head>
           <Navbar/>
             <section className="vh-100">
-        <div className="container-fluid h-100">
+        <Container className="container-fluid h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-md-9 col-lg-6 col-xl-5">
             </div>
@@ -92,7 +92,7 @@ const Login=()=>{
               </form>
             </div>
           </div>
-        </div>
+        </Container>
         
       </section>
             {/* <h4>User signed in: </h4>
@@ -113,3 +113,10 @@ const Login=()=>{
     )
 }
 export default Login;
+
+const Container = styled.div`
+background-image: url("/pexels-monicore-1391487.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+`
