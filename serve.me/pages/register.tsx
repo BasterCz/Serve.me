@@ -9,6 +9,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'  
 import Navbar from "./Components/navbar"
+import styled from "styled-components"
 
 const Register = () =>{
     const[registerEmail, SetRegisterEmail] = useState("");
@@ -42,14 +43,22 @@ const Register = () =>{
             </Head>
             <Navbar/>
             <section className="vh-100">
-        <div className="container-fluid h-100">
+          <Container className="container-fluid h-100">
+          <style jsx global>{`
+          body {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('/pexels-daria-shevtsova-3596688.jpg');
+          }
+        `}</style>
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-md-9 col-lg-6 col-xl-5">
             </div>
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
               <form>
                 <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p className="lead fw-normal mb-0 me-3 h1 title">Create an Account</p>
+                  <p className="lead fw-normal mb-0 me-3 h1 title-me">Registrace</p>
                 </div>
                 <div className="divider d-flex align-items-center my-4">
                   <p className="text-center fw-bold mx-3 mb-0" />
@@ -74,10 +83,16 @@ const Register = () =>{
               </form>
             </div>
           </div>
-        </div>
+        </Container>
         
       </section>
         </div> 
     )
 }
 export default Register;
+
+const Container = styled.div`
+.title-me {
+  color:white;
+  font-size: 2rem;
+}`;
